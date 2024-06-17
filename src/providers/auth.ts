@@ -100,7 +100,7 @@ export const authProvider: AuthProvider = {
     const accessToken = localStorage.getItem("access_token");
 
     try {
-      const { data } = await dataProvider.custom<{ me: User }>({
+      const { data } = await dataProvider.custom<{ me: any }>({
         url: API_URL,
         method: "post",
         headers: accessToken
