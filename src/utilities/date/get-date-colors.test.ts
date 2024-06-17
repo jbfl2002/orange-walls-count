@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
 
 import { getDateColor } from "./get-date-colors";
+import { describe, it } from "node:test";
 
 describe("getDateColors function", () => {
   it("should return 'error' if the date is before today", () => {
@@ -10,7 +11,7 @@ describe("getDateColors function", () => {
 
   it.each([1, 2, 3])(
     "should return 'warning' if the date is %s days from today",
-    (day) => {
+    (day: number) => {
       const date = dayjs().add(day, "day").format("YYYY-MM-DD");
       expect(getDateColor({ date: date })).toBe("warning");
     },
@@ -21,3 +22,7 @@ describe("getDateColors function", () => {
     expect(getDateColor({ date: date })).toBe("default");
   });
 });
+
+function expect(arg0: string) {
+    throw new Error("Function not implemented.");
+}
