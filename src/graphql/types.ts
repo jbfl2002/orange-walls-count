@@ -21,6 +21,15 @@ export type CreateCompanyMutation = {
   };
 };
 
+
+export type UpdateTaskMutationVariables = Types.Exact<{
+  input: Types.UpdateOneTaskInput;
+}>;
+
+export type UpdateTaskMutation = {
+  updateOneTask: Pick<Types.Task, "id" | "title" | "description" | "dueDate" | "completed">;
+};
+
 export type DashboardTotalCountsQueryVariables = Types.Exact<{
   [key: string]: never;
 }>;
